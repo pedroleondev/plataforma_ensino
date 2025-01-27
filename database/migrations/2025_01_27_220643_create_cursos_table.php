@@ -10,16 +10,16 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up()
-{
-    Schema::create('cursos', function (Blueprint $table) {
-        $table->id();
-        $table->string('titulo');
-        $table->text('descricao')->nullable();
-        $table->date('data_inicio');
-        $table->date('data_fim')->nullable();
-        $table->timestamps();
-    });
-}
+    {
+        Schema::create('cursos', function (Blueprint $table) {
+            $table->id();
+            $table->string('titulo');
+            $table->text('descricao')->nullable();
+            $table->date('data_inicio');
+            $table->date('data_fim')->nullable();
+            $table->timestamps();
+        });
+    }
 
 
     /**
