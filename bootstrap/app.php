@@ -16,7 +16,10 @@ return Application::configure(basePath: dirname(__DIR__))
             \Illuminate\Http\Middleware\AddLinkHeadersForPreloadedAssets::class,
         ]);
 
-        //
+        // 🔹 Definindo o alias do middleware "admin"
+        $middleware->alias([
+            'admin' => \App\Http\Middleware\AdminMiddleware::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

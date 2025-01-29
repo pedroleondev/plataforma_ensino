@@ -1,29 +1,30 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
+
+defineProps({
+    adminName: String,
+});
 </script>
 
 <template>
-    <Head title="Dashboard" />
-
     <AuthenticatedLayout>
-        <template #header>
-            <h2
-                class="text-xl font-semibold leading-tight text-gray-800"
-            >
-                Dashboard
-            </h2>
-        </template>
+        <Head title="Painel Administrativo" />
 
-        <div class="py-12">
-            <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-                <div
-                    class="overflow-hidden bg-white shadow-sm sm:rounded-lg"
-                >
-                    <div class="p-6 text-gray-900">
-                        You're logged in!
-                    </div>
-                </div>
+        <div class="p-6 bg-white shadow-md rounded-lg">
+            <h1 class="text-2xl font-bold text-gray-900">Painel Administrativo</h1>
+            <p class="mt-2 text-gray-600">Bem-vindo, {{ adminName }}!</p>
+
+            <div class="mt-6 space-y-4">
+                <a href="/professores" class="block px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700">
+                    Gerenciar Professores
+                </a>
+                <a href="/disciplinas" class="block px-4 py-2 bg-green-500 text-white rounded hover:bg-green-700">
+                    Gerenciar Disciplinas
+                </a>
+                <a href="/matriculas" class="block px-4 py-2 bg-red-500 text-white rounded hover:bg-red-700">
+                    Gerenciar Matrículas
+                </a>
             </div>
         </div>
     </AuthenticatedLayout>
