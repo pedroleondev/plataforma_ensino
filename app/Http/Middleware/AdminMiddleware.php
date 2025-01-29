@@ -11,9 +11,11 @@ class AdminMiddleware
     public function handle(Request $request, Closure $next)
     {
         if (Auth::check() && Auth::user()->is_admin) {
+            dd('Middleware admin passou.');
             return $next($request);
         }
-        return redirect('/'); // Redireciona para a página inicial se não for admin
-    }
-}
 
+        return redirect('/')->with('error', 'Você não tem permissão para acessar esta página.');
+    }
+
+}

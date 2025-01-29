@@ -23,6 +23,7 @@ class AlunoController extends Controller
     // Salvar um novo aluno no banco de dados
     public function store(Request $request)
     {
+        
         Aluno::create($request->all()); // Cria o aluno
         return redirect()->route('alunos.index')->with('success', 'Aluno criado com sucesso!');
     }
